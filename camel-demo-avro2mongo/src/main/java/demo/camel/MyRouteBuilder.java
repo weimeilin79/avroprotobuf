@@ -18,19 +18,14 @@ public class MyRouteBuilder extends RouteBuilder {
         
     public void configure() {
         AvroDataFormat format = new AvroDataFormat(Transaction.SCHEMA$);
-        String additionalinfo2="&additionalProperties.apicurio.registry.url=http://example-apicurioregistry.test.apps.cluster-b2f1.b2f1.example.opentlc.com/api";
-        additionalinfo2 = additionalinfo2+"&additionalProperties.apicurio.registry.avro-datum-provider=io.apicurio.registry.utils.serde.avro.ReflectAvroDatumProvider";
-        additionalinfo2 = additionalinfo2+"&valueDeserializer=io.apicurio.registry.utils.serde.AvroKafkaDeserializer";
-        
-        //&serializerClass=org.apache.kafka.common.serialization.ByteArraySerializer
-        from("kafka:demo-avro?brokers=localhost:9092&groupId=mygroup&serializerClass=org.apache.kafka.common.serialization.ByteArraySerializer")
+         
+        from("kafka:transrec?additionalProperties.apicurio.registry.url={{registryurl}}&additionalProperties.apicurio.registry.avro-datum-provider={{datumprovider}}")
             .unmarshal(format)
-            .log("---->originalmsg ${body}")
+            .log("---->originalmsg ${body} ")
             .convertBodyTo(String.class)
             .to("mongodb:mymongo?database=example&collection=transaction&operation=save")
         ;
-        //&valueDeserializer=org.apache.kafka.common.serialization.ByteArrayDeserializer
-        //.to("atlas:avroTojson.adm")
+        
     }
 
     
