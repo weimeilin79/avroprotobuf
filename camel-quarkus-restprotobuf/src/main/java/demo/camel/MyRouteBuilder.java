@@ -22,12 +22,9 @@ public class MyRouteBuilder extends RouteBuilder {
         
                 .setHeader("receiverid", jsonpath("$.receiverid"))
                 .setHeader("sender", jsonpath("$.sender.userid"))
-                .convertBodyTo(String.class)
-                .marshal().json(JsonLibrary.Jackson,java.util.LinkedHashMap.class)
-                .log("---->json ${body}")
-                .log("---->header ${headers}")
+                
                 .marshal().protobuf("demo.camel.TransactionProtos$Transaction")
-                .toD("kafka:weborder?brokers=localhost:9092&groupId=producergroup&serializerClass=org.apache.kafka.common.serialization.ByteBufferSerializer&key=${header.sender}")
+                .toD("kafka:webtrans?brokers=localhost:9092&groupId=producergroup&serializerClass=org.apache.kafka.common.serialization.ByteBufferSerializer&key=${header.sender}")
 
         ;
 
