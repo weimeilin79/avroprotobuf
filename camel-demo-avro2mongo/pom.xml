@@ -169,7 +169,7 @@
               <goal>download</goal>
             </goals>
             <configuration>
-              <registryUrl>http://example-apicurioregistry.test.apps.cluster-84df.84df.example.opentlc.com/api</registryUrl>
+              <registryUrl>http://localhost:8080/api</registryUrl>
               <ids>
                 <param1>demo-avro</param1>
               </ids>
