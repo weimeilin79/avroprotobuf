@@ -24,8 +24,8 @@ public class MyRouteBuilder extends RouteBuilder {
         //AvroDataFormat format = new AvroDataFormat(Transaction.SCHEMA$); //We don't need to do it because the serializer in kafka config does it
         from("kafka:transrec"+registryconfigAvro)
             .log("---->originalmsg ${body} ")
+            .convertBodyTo(String.class)
             //.unmarshal(format) //We don't need to do it because the serializer in kafka config does it
-            //.convertBodyTo(String.class)
             .to("mongodb:mymongo?database=example&collection=transaction&operation=save")
         ;
         
