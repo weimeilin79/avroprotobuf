@@ -1,0 +1,27 @@
+{
+  "name": "Transaction",
+  "type": "record",
+  "namespace": "demo.camel",
+  "fields": [
+    {
+      "name": "userid",
+      "type": "string"
+    },
+    {
+      "name": "transactionid",
+      "type": "string"
+    },
+    {
+      "name": "transactiontype",
+      "type": "string"
+    },
+    {
+      "name": "currency",
+      "type": "string"
+    },
+    {
+      "name": "amt",
+      "type": "string"
+    }
+  ]
+}
