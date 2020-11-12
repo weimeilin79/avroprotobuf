@@ -119,6 +119,8 @@ docker exec -it mongodb bash
 
 And find the data by using the following command.
 ```
+mongo
+
 use example
 db.transaction.find({})
 ```
