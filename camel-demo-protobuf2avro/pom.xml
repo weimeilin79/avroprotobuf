@@ -7,7 +7,7 @@
   <groupId>demo.camel</groupId>
   <artifactId>camel-profobuf2avro-producer</artifactId>
   <packaging>jar</packaging>
-  <version>1.0</version>
+  <version>1.0.0</version>
 
   <name>Schema Camel Route</name>
 
@@ -45,21 +45,21 @@
     <groupId>org.apache.camel</groupId>
     <artifactId>camel-main</artifactId>
   </dependency>
-  
+
   <dependency>
     <groupId>org.apache.camel</groupId>
     <artifactId>camel-protobuf</artifactId>
-  </dependency>  
+  </dependency>
 
   <dependency>
     <groupId>org.apache.camel</groupId>
     <artifactId>camel-jackson</artifactId>
-  </dependency>  
+  </dependency>
 
   <dependency>
     <groupId>org.apache.camel</groupId>
     <artifactId>camel-avro</artifactId>
-  </dependency>  
+  </dependency>
 
 
   <dependency>

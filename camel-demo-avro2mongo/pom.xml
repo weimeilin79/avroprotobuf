@@ -7,7 +7,7 @@
   <groupId>demo.camel</groupId>
   <artifactId>camel-avro2mongodb</artifactId>
   <packaging>jar</packaging>
-  <version>1.0</version>
+  <version>1.0.0</version>
 
   <name>Schema Camel Route</name>
 
@@ -41,8 +41,8 @@
       <groupId>org.apache.camel</groupId>
       <artifactId>camel-core</artifactId>
   </dependency>
-  
-  
+
+
   <dependency>
     <groupId>org.apache.camel</groupId>
     <artifactId>camel-main</artifactId>
@@ -51,12 +51,12 @@
   <dependency>
     <groupId>org.apache.camel</groupId>
     <artifactId>camel-avro</artifactId>
-  </dependency> 
-  
+  </dependency>
+
   <dependency>
     <groupId>org.apache.camel</groupId>
     <artifactId>camel-jackson</artifactId>
-  </dependency> 
+  </dependency>
   <dependency>
     <groupId>com.fasterxml.jackson.core</groupId>
     <artifactId>jackson-databind</artifactId>
@@ -196,7 +196,7 @@
         </executions>
       </plugin>
 
-     
+
 
     </plugins>
     <extensions>
