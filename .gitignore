@@ -1,0 +1,20 @@
+target
+.project
+.classpath
+.settings
+.idea
+.DS_Store
+*.iml
+*.ipr
+*.iws
+.metadata
+bin
+.codepro
+.pmd
+.externalToolBuilders/
+maven-eclipse.xml
+
+#Auto generated Avro and Protobuf resources
+*.proto
+*.avsc
+
