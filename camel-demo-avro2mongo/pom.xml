@@ -190,7 +190,7 @@
             </goals>
             <configuration>
               <sourceDirectory>${project.basedir}/src/main/resources</sourceDirectory>
-              <outputDirectory>${project.basedir}/src/main/java</outputDirectory>
+              <outputDirectory>${project.build.directory}/generated-sources</outputDirectory>
             </configuration>
           </execution>
         </executions>
