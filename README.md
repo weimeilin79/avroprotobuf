@@ -13,7 +13,7 @@ In the demo, we have one topic that stores the Transfer Request events, and one 
 
 #### Kafka (AMQ Streams)
 - First you need a Kafka Streaming cluster to store the events.
-Download Red Hat's version of Kafka from [here](https://developers.redhat.com/download-manager/file/amq-streams-1.3.0-ocp-install-examples.zip)
+Download Red Hat's version of Kafka from [here](https://access.redhat.com/jbossnetwork/restricted/listSoftware.html?downloadType=distributions&product=jboss.amq.streams)
 - Unzip the file and set the $KAFKA_HOME to the unzip directory.
 - Start up the Kafka cluster's broker and zookeeper locally. Also create all the topics needed later.
    `./demo_setup.sh`
@@ -66,10 +66,13 @@ Start up the 3 applications that are publishing and subscribing events from the 
 ##### OPTION A: Running Camel on Java Main and using the Apicurio Registry Libraries for Serde before sending to Kafka Topics.
 
 - Start REST to protobuf, in a new terminal, go to folder *camel-demo-restprotobuf*
-`
+
+  run `mvn compile exec:java`
+  
 - Start protobuf to avro, in a new terminal, go to folder *camel-demo-protobuf2avro*
 
   run `mvn compile exec:java`
+
 - Start avro to json (MongoDB), in a new terminal, go to folder *camel-demo-avro2mongo*
 
   run `mvn compile exec:java`
@@ -81,9 +84,11 @@ And you should have three Camel applications running
 - Start REST to protobuf, in a new terminal, go to folder *camel-quarkus-restprotobuf*
 
   run `mvn compile quarkus:dev`
+  
 - Start protobuf to avro, in a new terminal, go to folder *camel-quarkus-protobuf2avro*
 
   run `mvn compile quarkus:dev`
+  
 - Start avro to json (MongoDB), in a new terminal, go to folder *camel-quarkus-avro2mongo*
 
   run `mvn compile quarkus:dev`
@@ -111,7 +116,7 @@ curl -XPOST -H "Content-type: application/json" -d '{
 
 You will be able to see the result in the MongoDB
 
-In a new broswer, connect to the MongoDB container
+In a new terminal, connect to the MongoDB container
 
 ```
 docker exec -it mongodb bash
@@ -131,7 +136,6 @@ You should be able to see two records appear in the transaction table.
 { "_id" : ObjectId("5fa437d052afae2d0c6c8246"), "userid" : "chrissy", "transactionid" : "A010383", "transactiontype" : "SUB", "currency" : "USD", "amt" : "100.0" }
 { "_id" : ObjectId("5fa437d052afae2d0c6c824a"), "userid" : "Franz", "transactionid" : "A010383", "transactiontype" : "ADD", "currency" : "USD", "amt" : "100.0" }
 ```
-
 
 ### Resources
 Read more on how to implement them in the *Contract First* way with the schema from Apicurio Registry.
