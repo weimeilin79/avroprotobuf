@@ -7,7 +7,7 @@
   <groupId>demo.camel</groupId>
   <artifactId>camel-profobufkaka-producer</artifactId>
   <packaging>jar</packaging>
-  <version>1.0</version>
+  <version>1.0.0</version>
 
   <name>Schema Camel Route</name>
 
@@ -46,18 +46,18 @@
     <artifactId>camel-main</artifactId>
   </dependency>
 
-  
+
   <dependency>
     <groupId>org.apache.camel</groupId>
     <artifactId>camel-netty-http</artifactId>
   </dependency>
 
-  
+
 
   <dependency>
     <groupId>org.apache.camel</groupId>
     <artifactId>camel-protobuf</artifactId>
-  </dependency>  
+  </dependency>
   <dependency>
     <groupId>org.glassfish.jersey.core</groupId>
     <artifactId>jersey-common</artifactId>
@@ -67,13 +67,13 @@
   <dependency>
     <groupId>org.apache.camel</groupId>
     <artifactId>camel-jackson</artifactId>
-  </dependency>  
+  </dependency>
 
   <dependency>
     <groupId>org.apache.camel</groupId>
     <artifactId>camel-jsonpath</artifactId>
-  </dependency>  
-  
+  </dependency>
+
   <dependency>
     <groupId>org.apache.camel</groupId>
     <artifactId>camel-kafka</artifactId>
@@ -107,7 +107,7 @@
     <artifactId>apicurio-registry-utils-converter</artifactId>
     <version>${registry.version}</version>
   </dependency>
-  
+
 </dependencies>
 
 
@@ -179,7 +179,7 @@
             </goals>
             <configuration>
               <protocArtifact>com.google.protobuf:protoc:${protobuf-version}:exe:${os.detected.classifier}</protocArtifact>
-              <outputDirectory>${project.basedir}/src/main/java</outputDirectory>
+              <outputDirectory>${project.build.directory}/generated-sources</outputDirectory>
               <protoSourceRoot>${project.basedir}/src/main/resources</protoSourceRoot>
               <clearOutputDirectory>false</clearOutputDirectory>
             </configuration>
